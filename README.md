@@ -1,6 +1,6 @@
 # order_system 點餐系統+後台管理功能
 
-使用Vue+ElementUI結合完成的點餐系統.
+使用Vue+Element Plus結合完成的點餐系統.
 
 ## 編譯方法
 
