@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const year = new Date().getFullYear()
+const shopName = import.meta.env.VITE_SHOP_NAME
 </script>
 <template>
   <el-container>
@@ -9,7 +10,7 @@ const year = new Date().getFullYear()
     <el-main>
       <RouterView />
     </el-main>
-    <el-footer> Copyright © {{ year }} 曾古早味香菇肉羹點餐系統. </el-footer>
+    <el-footer> Copyright © {{ year }} {{ shopName }}點餐系統. </el-footer>
   </el-container>
 </template>
 <style scoped lang="scss">

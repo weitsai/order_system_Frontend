@@ -4,6 +4,7 @@ const cartStore = useCartStore()
 const { count } = storeToRefs(cartStore)
 const activeIndex = ref('/')
 const isElllipsis = ref(false)
+const shopName = import.meta.env.VITE_SHOP_NAME
 onMounted(() => {
   isElllipsis.value = window.innerWidth < 768
   window.addEventListener('resize', () => {
@@ -20,7 +21,7 @@ onMounted(() => {
     :ellipsis="isElllipsis"
   >
     <el-menu-item index="/" :class="$route.path === '/' ? 'link-active' : ''"
-      >曾古早味香菇肉羹點餐系統</el-menu-item
+      >{{ shopName }}點餐系統</el-menu-item
     >
     <div class="flex-grow" />
     <el-menu-item index="menu" :class="$route.path === '/menu' ? 'link-active' : ''"
