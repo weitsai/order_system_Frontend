@@ -1,46 +1,34 @@
-# order_system
+# order_system 點餐系統+後台管理功能
 
-This template should help get you started developing with Vue 3 in Vite.
+使用Vue+ElementUI結合完成的點餐系統.
 
-## Recommended IDE Setup
+## 編譯方法
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
+### 不進行編譯(development)
 ```sh
 npm run dev
 ```
-
-### Type-Check, Compile and Minify for Production
-
+### 進行編譯(production)
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 客製化
+- 可透過更改Logo或者名稱進行客製化
 
-```sh
-npm run lint
-```
+## 功能介紹
+### 前台點餐系統
+- 點餐系統功能有點餐、查詢餐點、歷史點餐紀錄、結帳
+- 透過點擊菜單品項上的數量+或-，即可選擇餐點數量
+- 透過輸入點餐輸入的資訊可查詢當前餐點狀況
+- 可查詢近30天內的所有點餐紀錄
+- 點選購物車輸入取餐資訊並送出，即可完成點餐，點餐完成時會顯示餐點資訊、桌號、單號、金額
+- 顧客可以透過意見回饋功能回饋商家須改進地方
+### 商家後台管理系統
+- 後台管理須由商家使用密碼進行登入後台管理
+- 商家可透過後台管理點餐單，點餐單可進行分類，分為尚未接單、已接單、已完成、已取消狀態
+- 商家可以透過按鈕選擇該筆訂單的狀態，使用者方可透過前台查詢的功能查詢該筆訂單狀態
+- 可以透過新增菜單資訊,如:餐點名稱、價格、描述、餐點狀態(停賣或者販售中)，並上傳該餐點圖片即可完成菜單新增品項
+- 可以點擊已新增的餐點修改該餐點資訊或刪除該品項
+- 可透過營業額查詢功能，查詢當天營業額及各品項販售數量(需輸入管理密碼)
+- 可以透過管理顧客意見回饋功能查詢顧客的意見回饋
