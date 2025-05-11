@@ -12,7 +12,51 @@ const cartStore = useCartStore()
 const { addToCart } = cartStore
 const menus = ref<Menu[] | null>(null)
 const loading = ref(true)
+
+// 模擬數據，使用我們創建的SVG圖片
+const mockMenus: Menu[] = [
+  {
+    id: 1,
+    name: '牛肉漢堡',
+    price: 80,
+    count: 1,
+    description: '美味的牛肉漢堡',
+    image: '/images/burger.svg'
+  },
+  {
+    id: 2,
+    name: '雞肉漢堡',
+    price: 70,
+    count: 1,
+    description: '美味的雞肉漢堡',
+    image: '/images/chicken_burger.svg'
+  },
+  {
+    id: 3,
+    name: '薯條',
+    price: 40,
+    count: 1,
+    description: '香脆薯條',
+    image: '/images/fries.svg'
+  },
+  {
+    id: 4,
+    name: '可樂',
+    price: 30,
+    count: 1,
+    description: '冰涼可樂',
+    image: ''  // 這個暫時沒有圖片，會使用默認圖片
+  }
+]
+
 onMounted(() => {
+  // 使用模擬數據替代API調用
+  setTimeout(() => {
+    menus.value = mockMenus
+      loading.value = false
+  }, 500) // 添加一點延遲模擬網絡請求
+
+  /*
   fetch('/api/allMenu')
     .then((res) => res.json())
     .then((res) => {
@@ -24,10 +68,11 @@ onMounted(() => {
     })
     .catch(() => {
       ElMessage.error('菜單加載失敗!')
-    })
+})
     .finally(() => {
       loading.value = false
     })
+  */
 })
 </script>
 <template>
@@ -57,7 +102,7 @@ onMounted(() => {
               <el-image
                 :key="menu.image"
                 style="width: 335px; height: 335px"
-                :src="menu.image === '' || menu.image === null ? '/api/image/none.png' : menu.image"
+                :src="menu.image === '' || menu.image === null ? '/images/burger.svg' : menu.image"
                 lazy
                 fit="fill"
               >
